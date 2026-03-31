@@ -20093,7 +20093,7 @@
 	function instance$2($$self, $$props, $$invalidate) {
 		let $storesLoaded;
 		component_subscribe($$self, storesLoaded, $$value => $$invalidate(2, $storesLoaded = $$value));
-		const maxSpeedupMultiplier = 490 / 357; // gathered from some testing, any higher and we get teleported back
+		const maxSpeedupMultiplier = 500 /400; // gathered from some testing, any higher and we get teleported back
 
 		// this file is a hot mess, but it works
 		let speedupMultiplier = 1;
