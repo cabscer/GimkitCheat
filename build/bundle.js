@@ -17150,7 +17150,7 @@
 
 			freecamUpdateInterval = setInterval(
 				() => {
-					let freecamSpeed = 20 / zoomValue * 1.75;
+					let freecam = 20 / zoomValue * 1.75;
 					if (keys.has("ArrowUp")) freecamPos.y -= freecamSpeed;
 					if (keys.has("ArrowDown")) freecamPos.y += freecamSpeed;
 					if (keys.has("ArrowLeft")) freecamPos.x -= freecamSpeed;
@@ -19959,9 +19959,9 @@
 
 		let slider_props = {
 			title: "Speedup Amount",
-			min: 1,
+			min: 2,
 			max: /*maxSpeedupMultiplier*/ ctx[3],
-			step: 0.005
+			step: 0.001
 		};
 
 		if (/*speedupMultiplier*/ ctx[0] !== void 0) {
@@ -20093,7 +20093,7 @@
 	function instance$2($$self, $$props, $$invalidate) {
 		let $storesLoaded;
 		component_subscribe($$self, storesLoaded, $$value => $$invalidate(2, $storesLoaded = $$value));
-		const maxSpeedupMultiplier = 500 /400; // gathered from some testing, any higher and we get teleported back
+		const maxSpeedupMultiplier = 100000 /1000000000; // gathered from some testing, any higher and we get teleported back
 
 		// this file is a hot mess, but it works
 		let speedupMultiplier = 1;
@@ -20115,7 +20115,7 @@
 			}
 		}
 
-		setInterval(checkSpeed, 670);
+		setInterval(checkSpeed, 800);
 
 		function checkSpeed() {
 			if (!getUnsafeWindow()?.stores?.me) return;
