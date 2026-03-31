@@ -20093,7 +20093,7 @@
 	function instance$2($$self, $$props, $$invalidate) {
 		let $storesLoaded;
 		component_subscribe($$self, storesLoaded, $$value => $$invalidate(2, $storesLoaded = $$value));
-		const maxSpeedupMultiplier = 100000 /1000000000; // gathered from some testing, any higher and we get teleported back
+		const maxSpeedupMultiplier = 1000 /10000; // gathered from some testing, any higher and we get teleported back
 
 		// this file is a hot mess, but it works
 		let speedupMultiplier = 1;
@@ -20115,7 +20115,7 @@
 			}
 		}
 
-		setInterval(checkSpeed, 800);
+		setInterval(checkSpeed, 850);
 
 		function checkSpeed() {
 			if (!getUnsafeWindow()?.stores?.me) return;
